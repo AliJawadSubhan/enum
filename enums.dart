@@ -1,8 +1,28 @@
+import 'dart:io';
+
 void main() {
   PickImage().pick(Sourcetype.camera);
+
+  print('Enter a sentence:');
+  String sentence = stdin.readLineSync()!;
+
+  List<String> words = sentence.split(' ');
+  print('List of words: $words');
+  List input = words;
+  int len = 0;
+  String longword = '';
+  for (var word in input) {
+    if (word.length > len) {
+      len = word.length;
+      longword = word;
+    }
+  }
+  print(longword);
 }
 
 enum Sourcetype { camera, gallery, googlePhotos }
+
+enum Students { first, seconds, third }
 
 class PickImage {
   pick(Sourcetype sourcetype) {
@@ -20,5 +40,14 @@ class PickImage {
       default:
         print('no photos picked');
     }
+    print('the selected source was ');
+  }
+
+  checking() {
+    if (Sourcetype.values[0] == Sourcetype.camera) {
+      print("Got Camera from values");
+    }
   }
 }
+
+anargarms(String firstInput, String secondInput) {}
