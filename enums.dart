@@ -1,7 +1,11 @@
 import 'dart:io';
 
+import 'test.dart';
+
 void main() {
   PickImage().pick(Sourcetype.camera);
+  Private private = Private();
+  private.dontWork;
 
   print('Enter a sentence:');
   String sentence = stdin.readLineSync()!;
