@@ -7,6 +7,12 @@ void main() {
   Private private = Private();
   private.dontWork;
 
+  List homo = ['hello', 12, 'XD'];
+
+  for (var i in homo) {
+    print(i.runtimeType);
+  }
+
   print('Enter a sentence:');
   String sentence = stdin.readLineSync()!;
 
